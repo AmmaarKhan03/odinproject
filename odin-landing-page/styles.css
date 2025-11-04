@@ -2,8 +2,13 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Times New Roman', Times, serif;
 }
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
 
 header{
     background-color: #1F2937;
@@ -30,6 +35,12 @@ a {
     color: inherit;
     font-size: 18px;
 }
+
+a:hover {
+    color: #3882F6;
+    transition: color 0.3 ease;
+}
+
 
 .website-info{
     display: flex;
@@ -69,6 +80,11 @@ a {
     margin-top: 10px;
 }
 
+.left-info button:hover {
+    background-color: #2563EB; 
+    transition: background-color 0.3s ease;
+}
+
 .right-image{
     display: flex;
     flex: 1;
@@ -102,7 +118,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 200px;
+    max-width: 150px;
 
 }
 
@@ -113,4 +129,184 @@ a {
     width: 150px;
     margin-bottom: 10px;
 
+}
+
+.quote-section {
+    background-color: #E5E7EB;
+    padding: 100px 200px;
+}
+
+
+
+
+blockquote {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-text {
+    text-align: left;
+    font-size: 36px;
+    color: #1F2937;
+    font-weight: 300;
+    font-style: italic;
+}
+
+cite {
+    display: block;/* makes its own line */
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1F2937;
+    font-style: normal;
+}
+
+.cta-section {
+padding: 100px 200px;
+
+}
+
+.cta-container {
+    display: flex;
+    color: white;
+    background-color: #3882f6;
+    padding: 40px 80px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    gap: 40px;
+
+}
+
+.left-text  {
+text-align: left;
+}
+.left-text h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.left-info p {
+    font-size: 16px;
+    color: #e5e7eb;
+}
+
+.right-button button {
+color: white;
+background-color: #3882F6;
+border: 2px solid white;
+border-radius: 8px;
+font-weight: bold;
+padding: 8px 30px;
+cursor: pointer;
+font-size: 16px;
+}
+
+.right-button button:hover {
+    background-color: white;
+    color: #3882F6;
+}
+
+footer {
+    text-align: center;
+    background-color: #1F2937;
+    color: white;
+    padding: 20px;
+}
+
+@media (max-width: 1023px) {
+    header {
+        padding: 20px 50px; /* Less padding */
+    }
+
+    .website-info {
+        flex-direction: column; /* Stack vertically */
+        text-align: center;
+    }
+
+    .left-info {
+        align-items: center; /* Center button */
+    }
+
+    .info-container {
+        flex-wrap: wrap; /* Allow boxes to wrap */
+        gap: 30px;
+    }
+
+    .quote-section {
+        padding: 80px 100px; /* Less padding */
+    }
+
+    .cta-section {
+        padding: 80px 50px;
+    }
+}
+
+/* Mobile styles (max 767px) */
+@media (max-width: 767px) {
+    header {
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack logo and links */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+    }
+
+    .website-info {
+        flex-direction: column;
+        padding-bottom: 40px;
+    }
+
+    .left-info h1 {
+        font-size: 32px; /* Smaller heading */
+    }
+
+    .right-image {
+        min-height: 150px;
+    }
+
+    .random-info {
+        padding: 40px 20px;
+    }
+
+    .header-info {
+        font-size: 28px;
+    }
+
+    .info-container {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center;
+    }
+
+    .quote-section {
+        padding: 60px 30px;
+    }
+
+    .quote-text {
+        font-size: 24px; /* Smaller quote text */
+    }
+
+    cite {
+        font-size: 18px;
+    }
+
+    .cta-section {
+        padding: 60px 20px;
+    }
+
+    .cta-container {
+        flex-direction: column; /* Stack text and button */
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .left-text {
+        text-align: center;
+    }
 }
