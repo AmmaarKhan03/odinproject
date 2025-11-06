@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function getComputerchoice() {
+           let x = Math.floor(Math.random() * 3);
+
+           if(x === 0 ) {
+            return "rock";
+           } else if (x === 1) {
+            return "paper";
+           } else {
+            return "scissors"
+           }
+        }
+
+        function getHumanChoice() {
+        const choice = prompt("Enter rock, paper, or scissors:")
+        return choice.toLowerCase();
+        }
+
+        function cap(s) {
+            return s.charAt(0).toUpperCase() + s.slice(1);
+        }
+
+        // const humanSelectioin = getHumanChoice();
+        // const computerSelection = getComputerchoice();
+
+
+        let humanScore = 0;
+        let computerScore = 0; 
+
+        function playgame() {
+            // let humanScore = 0;
+            // let computerScore = 0; 
+
+            
+
+
+            function playRound(humanChoice, computerChoice) {
+
+                humanChoice = humanChoice.toLowerCase();
+
+                if (humanChoice === computerChoice) {
+                    console.log ("its a tie");
+                } else if (
+                (humanChoice === "rock" && computerChoice === "scissors") ||
+                (humanChoice === "paper" && computerChoice === "rock") ||
+                (humanChoice === "scissors" && computerChoice === "paper")
+                ){
+                    console.log(`You win! ${cap(humanChoice)} beats ${computerChoice}` );
+                    humanScore++
+                } else if (
+                (computerChoice === "rock" && humanChoice === "scissors") ||
+                (computerChoice === "paper" && humanChoice === "rock") ||
+                (computerChoice === "scissors" && humanChoice === "paper")
+                ) {
+                    console.log(`You Lose! ${computerChoice} beats ${cap(humanChoice)}`);
+                    computerScore++;
+                } else {
+                    console.log("invalid input!");
+                }        
+            }
+            const human = getHumanChoice();
+            const computer = getComputerchoice();
+            playRound(human, computer);
+            console.log(`scores -> YOu: ${humanScore} | Computer: ${computerScore}`);
+        }
+
+        
+        let rounds = 0; 
+
+        while (rounds <= 5) {
+            playgame();
+            rounds++;
+        }
+
+
+    </script>
+
+</body>
+</html>
